@@ -64,8 +64,6 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_available_zones"></a> [available\_zones](#output\_available\_zones) | List of available zones in region |
-| <a name="output_instances_self_links"></a> [instances\_self\_links](#output\_instances\_self\_links) | List of self-links for compute instances |
 | <a name="output_network"></a> [network](#output\_network) | The created network |
 | <a name="output_network_id"></a> [network\_id](#output\_network\_id) | The ID of the VPC being created |
 | <a name="output_network_name"></a> [network\_name](#output\_network\_name) | The name of the VPC being created |

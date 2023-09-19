@@ -61,7 +61,7 @@ module "instance_template" {
   source          = "./modules/instance_template"
   region          = var.region
   project_id      = var.project_id
-  subnetwork      = module.subnets.subnets.self_link
+  subnetwork          = module.subnets.subnets_self_links[0]
   service_account = var.service_account
   machine_type    = var.machine_type 
   source_image    = var.source_image
@@ -73,7 +73,7 @@ module "compute_instance" {
   source              = "./modules/compute_instance"
   region              = var.region
   zone                = var.zone
-  subnetwork          = module.subnets.subnets.self_link
+  subnetwork          = module.subnets.subnets_self_links[0]
   num_instances       = var.num_instances
   hostname            = "cp"
   instance_template   = module.instance_template.self_link
