@@ -67,6 +67,9 @@ module "instance_template" {
   source_image    = var.source_image
   source_image_family = var.source_image_family
   source_image_project = var.source_image_project
+  metadata = {
+    ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}"
+  }
 }
 
 module "compute_instance" {

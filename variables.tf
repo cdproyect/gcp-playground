@@ -242,3 +242,13 @@ variable "source_image_project" {
   type        = string
   default     = "centos-cloud"
 }
+
+variable "gce_ssh_user" {
+  description = "GCE SSH User"
+  type = string
+}
+
+variable "gce_ssh_pub_key_file" {
+  description = "path to the ssh public key"
+  type = string
+}
