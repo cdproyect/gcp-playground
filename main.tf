@@ -61,7 +61,7 @@ module "instance_template" {
   source          = "./modules/instance_template"
   region          = var.region
   project_id      = var.project_id
-  subnetwork          = module.subnets.subnets_self_links[0]
+  subnetwork      = module.subnets.subnets_self_links[0]
   service_account = var.service_account
   machine_type    = var.machine_type 
   source_image    = var.source_image
@@ -72,13 +72,29 @@ module "instance_template" {
   }
 }
 
-module "compute_instance" {
+module "cp" {
   source              = "./modules/compute_instance"
   region              = var.region
   zone                = var.zone
   subnetwork          = module.subnets.subnets_self_links[0]
   num_instances       = var.num_instances
   hostname            = "cp"
+  instance_template   = module.instance_template.self_link
+  deletion_protection = false
+
+  access_config = [{
+    nat_ip       = var.nat_ip
+    network_tier = var.network_tier
+  }, ]
+}
+
+module "worker" {
+  source              = "./modules/compute_instance"
+  region              = var.region
+  zone                = var.zone
+  subnetwork          = module.subnets.subnets_self_links[0]
+  num_instances       = var.num_instances
+  hostname            = "worker"
   instance_template   = module.instance_template.self_link
   deletion_protection = false
 

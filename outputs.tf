@@ -86,12 +86,22 @@ output "subnets_secondary_ranges" {
 
 ##### Instance details
 
-output "instances_self_links" {
+output "instances_self_links_cp" {
   description = "List of self-links for compute instances"
-  value       = module.compute_instance.instances_self_links
+  value       = module.cp.instances_self_links
 }
 
-output "available_zones" {
+output "available_zones_cp" {
   description = "List of available zones in region"
-  value       = module.compute_instance.available_zones
+  value       = module.cp.available_zones
+}
+
+output "instances_self_links_worker" {
+  description = "List of self-links for compute instances"
+  value       = module.worker.instances_self_links
+}
+
+output "available_zones_worker" {
+  description = "List of available zones in region"
+  value       = module.worker.available_zones
 }

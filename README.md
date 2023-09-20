@@ -18,11 +18,12 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_compute_instance"></a> [compute\_instance](#module\_compute\_instance) | ./modules/compute_instance | n/a |
+| <a name="module_cp"></a> [cp](#module\_cp) | ./modules/compute_instance | n/a |
 | <a name="module_firewall_rules"></a> [firewall\_rules](#module\_firewall\_rules) | ./modules/firewall-rules | n/a |
 | <a name="module_instance_template"></a> [instance\_template](#module\_instance\_template) | ./modules/instance_template | n/a |
 | <a name="module_subnets"></a> [subnets](#module\_subnets) | ./modules/subnets | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | ./modules/vpc | n/a |
+| <a name="module_worker"></a> [worker](#module\_worker) | ./modules/compute_instance | n/a |
 
 ## Resources
 
@@ -66,8 +67,10 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_available_zones"></a> [available\_zones](#output\_available\_zones) | List of available zones in region |
-| <a name="output_instances_self_links"></a> [instances\_self\_links](#output\_instances\_self\_links) | List of self-links for compute instances |
+| <a name="output_available_zones_cp"></a> [available\_zones\_cp](#output\_available\_zones\_cp) | List of available zones in region |
+| <a name="output_available_zones_worker"></a> [available\_zones\_worker](#output\_available\_zones\_worker) | List of available zones in region |
+| <a name="output_instances_self_links_cp"></a> [instances\_self\_links\_cp](#output\_instances\_self\_links\_cp) | List of self-links for compute instances |
+| <a name="output_instances_self_links_worker"></a> [instances\_self\_links\_worker](#output\_instances\_self\_links\_worker) | List of self-links for compute instances |
 | <a name="output_network"></a> [network](#output\_network) | The created network |
 | <a name="output_network_id"></a> [network\_id](#output\_network\_id) | The ID of the VPC being created |
 | <a name="output_network_name"></a> [network\_name](#output\_network\_name) | The name of the VPC being created |
