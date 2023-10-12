@@ -70,6 +70,7 @@ module "instance_template" {
   metadata = {
     ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}"
   }
+  startup_script = "${file("${path.module}/scripts/initscript.sh")}"
 }
 
 module "cp" {
