@@ -57,6 +57,14 @@ module "firewall_rules" {
   egress_rules  = var.egress_rules
 }
 
+data "template_file" "init" {
+  template = "${file("${path.module}/scripts/initscript.sh")}"
+  vars = {
+    user = "${var.content_user}"
+    user_access = "${var.content_user_access}"
+    address = "${var.content_url}"
+  }
+}
 module "instance_template" {
   source          = "./modules/instance_template"
   region          = var.region
@@ -70,7 +78,7 @@ module "instance_template" {
   metadata = {
     ssh-keys = "${var.gce_ssh_user}:${file(var.gce_ssh_pub_key_file)}"
   }
-  startup_script = "${file("${path.module}/scripts/initscript.sh")}"
+  startup_script = data.template_file.init.rendered
 }
 
 module "cp" {

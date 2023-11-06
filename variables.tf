@@ -252,3 +252,18 @@ variable "gce_ssh_pub_key_file" {
   description = "path to the ssh public key"
   type = string
 }
+
+variable "content_user" {
+  description = "User to get training material"
+  type = string
+}
+
+variable "content_user_access" {
+  description = "Input to get training material"
+  type = string
+}
+
+variable "content_url" {
+  description = "Content URL"
+  type = string
+}

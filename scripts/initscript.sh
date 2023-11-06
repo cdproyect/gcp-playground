@@ -15,3 +15,6 @@ sudo systemctl enable --now kubelet
 sudo swapoff -a
 
 sudo apt-get install bash-completion vim -y
+
+wget ${address} --user=${user} --password=${user_access}
+tar -xvf LFD259_V2023-09-05_SOLUTIONS.tar.xz
